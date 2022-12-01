@@ -21,6 +21,12 @@ header {
   background-size: 45%;
   background-color: var(--main-color);
 }
+#mennu {
+  z-index: 1000;
+  color: var(--light-green);
+  font-size: 36px;
+  display: none;
+}
 .logo {
   color: var(--white);
   font-size: 40px;
@@ -35,10 +41,15 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+.navbar.open {
+  display: flex;
+  transition: 0.45s;
+}
 .navbar {
   display: flex;
   gap: 50px;
   font-size: 18px;
+  transition: 0.45s;
   align-items: center;
 }
 .navbar a {
@@ -420,7 +431,6 @@ nav {
 }
 .card-img {
   width: 100%;
-  width: auto;
   margin-bottom: 20px;
 }
 .topp {
@@ -469,6 +479,7 @@ nav {
   background-color: var(--main-color);
   margin: 50px 5%;
   padding: 50px;
+  border-radius: 10px;
   font-family: var(--manrope);
   text-align: center;
 }
@@ -484,11 +495,14 @@ nav {
 }
 input[type="email"] {
   padding: 15px 30px;
-  width: 30%;
+  width: 45%;
   outline: none;
   font-size: 20px;
   border: none;
   border-radius: 50px;
+}
+input[type="email"]::placeholder {
+  font-size: 18px;
 }
 input[type="submit"] {
   color: var(--main-color);
@@ -498,7 +512,6 @@ input[type="submit"] {
   font-family: var(--open-sans);
   border-radius: 50px;
   font-weight: 700;
-  /* border: 2px solid var(--main-color); */
 }
 footer {
   display: grid;
@@ -528,4 +541,123 @@ footer p {
   margin-bottom: 13px;
   color: var(--text-color);
   font-size: 18px;
+}
+@media (max-width: 1080px) {
+  .hero-text h2 {
+    font-size: 38px;
+  }
+  .objective-text h3 {
+    font-size: 26px;
+  }
+  .connect h4 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 876px) {
+  .features h3,
+  .blog h3 {
+    font-size: 26px;
+  }
+  footer {
+    grid-template-columns: 1fr 0.5fr;
+  }
+}
+@media (max-width: 862px) {
+  #mennu {
+    display: block;
+  }
+  .navbar {
+    transition: 0.45s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    display: none;
+    background-color: var(--main-color);
+  }
+  section.hero {
+    grid-template-columns: 2fr;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .btn-box {
+    justify-content: center;
+  }
+  .hero-text {
+    margin-block: 20px;
+  }
+  .hero-img {
+    display: none;
+  }
+  .objective {
+    grid-template-columns: 1fr 0.5fr;
+  }
+  .objective.guy {
+    grid-template-columns: 0.5fr 1fr;
+  }
+  .connect {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 662px) {
+  .cta h3 {
+    font-size: 28px;
+  }
+  .top h3 {
+    font-size: 28px;
+  }
+  .top {
+    text-align: center;
+    justify-content: center;
+  }
+  .testimonial-box {
+    justify-content: center;
+  }
+  .arrows {
+    display: none;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  input[type="email"] {
+    width: initial;
+  }
+  header {
+    padding: 30px 5%;
+  }
+}
+@media (max-width: 582px) {
+  .objective {
+    grid-template-columns: 1fr;
+  }
+  .objective.guy {
+    grid-template-columns: 1fr;
+  }
+  .main-img {
+    margin-bottom: 34px;
+  }
+  .btn-box {
+    flex-direction: column;
+  }
+  footer {
+    grid-template-columns: 1fr;
+  }
+  .cta {
+    padding: 50px 20px;
+  }
+  .cta h3 {
+    font-size: 26px;
+  }
+  .testimonial {
+    margin-top: 0;
+  }
 }
